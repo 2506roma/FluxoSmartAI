@@ -6,7 +6,7 @@
     # Scikit-learn: Modelos preditivos ( Usando algoritimo como regreção ou árvore de decisão.)
     # Matplotlib: Vizualização dos dados e gráficos e apresentação dos resultados
     # Seaborn: Padrões dos dados financeiros
-
+import pandas as pd
   #2 Ferramenta e Tecnologias:
       #1 Flet para Interface e app e dasboards
       #2 Python Modelos preditivo
