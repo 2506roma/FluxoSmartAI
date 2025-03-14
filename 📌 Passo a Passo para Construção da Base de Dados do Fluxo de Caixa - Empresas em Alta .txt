@@ -1,0 +1,98 @@
+📌 Passo a Passo para Construção da Base de Dados do Fluxo de Caixa - Empresas em Alta 
+
+🔹 Etapa 1 - Identificar Empresas em Alta (20 a 30 dias)
+Objetivo: Encontrar setores e negócios mais lucrativos e com alta movimentação** para definir o foco da base de dados.  
+
+1️⃣ Pesquisar setores usando a SerpAPI
+✅ O que vamos fazer?
+- Usar a SerpAPI para buscar no Google os termos:  
+  - “empresas em alta no Brasil 2024”  
+  - “setores mais lucrativos de pequenas empresas”  
+  - “negócios promissores para investir”  
+- Filtrar os setores e negócios mais citados.  
+
+✅ Resultados esperados:
+- Uma lista das empresas e setores mais promissores e lucrativos.  
+- Identificação de quais segmentos estão em alta.  
+
+---
+
+🔹 Etapa 2 - Coletar Dados Econômicos que Afetam o Fluxo de Caixa (25 a 35 dias) 
+Objetivo: Obter indicadores financeiros e econômicos que impactam as empresas em alta.  
+
+2️⃣ Consultar Banco Central do Brasil para taxas econômicas  
+✅ O que vamos fazer?
+- Consultar a API do Banco Central do Brasil para obter:  
+  - Taxa Selic → Impacto no crédito e financiamento.  
+  - CDI → Influência no custo do dinheiro e nos investimentos.  
+  - Inflação (IPCA, IGP-M) → Como os preços variam ao longo do tempo.  
+  - Dólar e câmbio → Se o setor depende de importações.  
+
+✅ Resultados esperados:
+- Dados históricos e atuais das principais taxas econômicas.  
+- Modelagem de como esses fatores afetam o fluxo de caixa das empresas em alta.  
+
+---
+
+🔹 Etapa 3 - Coletar Dados de Consumo e Tendências no Setor (30 a 40 dias) 
+Objetivo: Saber se a demanda pelo setor escolhido está em alta ou baixa**.  
+
+3️⃣ Consultar IBGE para dados de mercado e consumo
+✅ O que vamos fazer?
+- Consultar a API do **IBGE** para dados como:  
+  - Índice de vendas do setor → O volume de vendas está crescendo ou caindo?  
+  - Evolução do mercado de varejo/serviços → Qual a tendência do setor?  
+  - Nível de renda da população → O público tem poder de compra para consumir produtos/serviços do setor?  
+
+✅ Resultados esperados:
+- Dados reais sobre como o setor está se comportando na economia.  
+- Análise de períodos de alta e baixa para ajustar a simulação do fluxo de caixa.  
+
+---
+
+🔹 Etapa 4 - Identificar Tendências e Sazonalidade (30 a 45 dias) 
+Objetivo: Descobrir quais períodos do ano têm maior ou menor demanda no setor.  
+
+4️⃣ Analisar tendências com Google Trends (Scraping)
+✅ O que vamos fazer?
+- Consultar o **Google Trends** (via scraping) para pesquisar termos como:  
+  - “demanda por [setor escolhido] no Brasil”  
+  - “melhores épocas para vender [produto/serviço]”  
+  - “[setor] sazonalidade de mercado”  
+- Comparar os dados ao longo do tempo para ver sazonalidade e picos de demanda.  
+
+✅ Resultados esperados:
+- Descobrir os meses de pico e de baixa no setor.  
+- Ajustar os dados do fluxo de caixa para refletir essas oscilações.  
+
+---
+
+🔹 Etapa 5 - Construção da Base de Dados do Fluxo de Caixa   (40 a 50 dias) 
+Objetivo: Criar um banco de dados realista com entradas e saídas financeiras de uma empresa do setor escolhido.  
+
+5️⃣ Criar a base de dados final  
+✅ O que vamos fazer? 
+- Definir categorias de entradas e saídas no fluxo de caixa, como:  
+  - Entradas: vendas, investimentos, receitas extras.  
+  - Saídas: custos fixos, impostos, fornecedores, marketing.  
+- Usar os dados coletados das APIs para gerar variações realistas ao longo do tempo.  
+- Criar simulações para cenários diferentes:  
+  - Cenário normal** → Com base nos dados coletados.  
+  - Cenário de crise** → Se o consumo cair ou os juros subirem.  
+  - Cenário de crescimento** → Se o setor estiver aquecido.  
+
+✅ Resultados esperados:
+- Uma base de dados completa de fluxo de caixa** simulando a realidade de uma empresa do setor.  
+- Possibilidade de treinar modelos de IA para prever receitas futuras.  
+
+---
+
+📌 Resumo Final do Processo
+
+|            Etapa                 | Duração estimada |      API Utilizada         |                 O que vamos fazer?                             |  
+|----------------------------------|------------------|----------------------------|----------------------------------------------------------------|  
+| 1 - Identificar empresas em alta | 20 a 30 dias     | SerpAPI                    | Encontrar setores promissores e lucrativos.                    |  
+| 2 - Coletar variação econômica   | 25 a 35 dias     | Banco Central do Brasil    | Obter inflação, juros e CDI que afetam o setor.                |  
+| 3 - Analisar consumo e mercado   | 30 a 40 dias     | IBGE                       | Dados sobre vendas, crescimento do setor e renda da população. |  
+| 4 - Identificar sazonalidade     | 30 a 45 dias     | Google Trends (scraping)   | Ver períodos de alta e baixa demanda no setor.                 |  
+| 5 - Criar base de fluxo de caixa | 40 a 50 dias     | Dados coletados            | Simular entradas e saídas realistas para o setor.              |  
