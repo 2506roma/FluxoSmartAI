@@ -176,8 +176,19 @@ async def extrair_setores(url: str):
 
 
                 soup = BeautifulSoup(await response.text(), "html.parser")
-                tags_extraidos = soup.select("h1, h2, h3, li, p, strong, b , td")
-                
+                extracoes = {
+                    "h1": [tag.text.strip() for tag in soup.find_all('h1')],
+                    "h2": [tag.text.strip() for tag in soup.find_all('h2')],
+                    "h3": [tag.text.strip() for tag in soup.find_all('h3')],
+                    "li": [tag.text.strip() for tag in soup.find_all('li')],
+                    "p": [tag.text.strip() for tag in soup.find_all('p')],
+                    "strong": [tag.text.strip() for tag in soup.find_all('strong')],
+                    "b": [tag.text.strip() for tag in soup.find_all('b')],
+                    "td": [tag.text.strip() for tag in soup.find_all('td')],
+                }
+                #tags_extraidos = soup.select("h1, h2, h3, li, p, strong, b , td")
+                tags_extraidos = sum(extracoes.values(), [])
+
                 texto = " ".join([p.get_text() for p in soup.find_all("p")]) # Tratamento e solitações. (for em p solicita todas as tags P ) (p.gat_taxt -> solicitação de cada texto da tag P) (" ".join solicita que cada string seja armazeenada na variavel com espaço)
                 texto = tratamento_texto(texto)
 
@@ -185,15 +196,16 @@ async def extrair_setores(url: str):
 
                 setores_detectados = set()
                 for tag in tags_extraidos:
-                    texto_extraidos = [unicodedata.normalize("NFKD", t.strip().upper()) for t in tag.stripped_strings]
-                    for texto_solicitado in texto_extraidos:
-                        if not texto_solicitado:
-                            print ("Erro ao solicitar texto")
-                            continue
-                        texto_normalizado = tratamento_texto(texto_solicitado)
-                    if texto_normalizado  in setores_tratados:
+                    texto_solicitado = unicodedata.normalize("NFKD", tag.strip().upper())  # Normaliza diretamente a string
+                    if not texto_solicitado:
+                        print("Erro ao solicitar texto")
+                        continue
+                    texto_normalizado = tratamento_texto(texto_solicitado)
+                    
+                    if texto_normalizado in setores_tratados:
                         print(f"✅ Setor encontrado: {setores_tratados[texto_normalizado]}")  # Confirma se encontrou o setor
                         setores_detectados.update(setores_tratados[texto_normalizado])
+
 
                 return setores_detectados
     except aiohttp.ClientError as e:
