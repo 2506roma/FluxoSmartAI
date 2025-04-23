@@ -1,6 +1,11 @@
 # 💸 FluxoSmartAI
 
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+
 O **FluxoSmartAI** é um projeto de previsão de fluxo de caixa desenvolvido em Python, com foco em facilitar a tomada de decisão financeira para empresas e profissionais autônomos. Ele utiliza técnicas de machine learning para estimar o saldo futuro com base em entradas e saídas financeiras históricas.
+
+> 🚧 **Este projeto está em fase de desenvolvimento.**  
+> Novas funcionalidades, melhorias no modelo e ajustes de performance estão em andamento.
 
 ---
 
