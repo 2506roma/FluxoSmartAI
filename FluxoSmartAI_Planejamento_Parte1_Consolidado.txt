@@ -1,0 +1,147 @@
+==============================
+PROJETO: FluxoSmartAI
+PLANEJAMENTO - PARTE 1 (Consolidado)
+==============================
+
+===== Documento 1: Planejamento_Parte1 =====
+
+
+📌 PLANEJAMENTO - PARTE 1 DO PROJETO FluxoSmartAI
+
+🎯 Objetivo Geral:
+Identificar e mapear setores de empresas em três situações de mercado (Alta, Estáveis, Baixa), seguindo o mesmo processo em cada etapa, para posterior criação de fluxo de caixa simulado.
+
+─────────────────────────────────────────────────────
+
+🚀 ETAPA 1: Empresas em Alta
+- Buscar setores/empresas promissoras e em crescimento.
+- Rodar a busca no Google via SerpAPI (palavras-chave específicas).
+- Filtrar os 10 primeiros links de cada busca.
+- Validar as fontes (aceitar apenas fontes confiáveis).
+- Extrair os setores citados nos sites.
+- Eliminar repetições e padronizar nomes dos setores.
+- Para cada setor, criar uma simulação de fluxo de caixa considerando:
+  - Entradas (vendas, serviços, investimentos).
+  - Saídas (custos fixos, impostos, fornecedores, marketing).
+  - Sazonalidade e eventos especiais, se aplicável.
+  - Dados simulados cobrindo no mínimo 2 anos.
+- Salvar os fluxos de caixa em arquivos separados por setor.
+
+─────────────────────────────────────────────────────
+
+🟡 ETAPA 2: Empresas Estáveis (Média)
+- Repetir o mesmo processo da Etapa 1, agora com foco em setores estabilizados/tradicionais.
+- Utilizar termos de busca apropriados para setores estáveis.
+- Filtrar e validar os links (10 primeiros, fontes confiáveis).
+- Extrair, limpar e padronizar os setores.
+- Criar fluxo de caixa para cada setor identificado (mínimo 2 anos, considerar sazonalidade quando necessário).
+- Salvar os fluxos de caixa em arquivos organizados por setor.
+
+─────────────────────────────────────────────────────
+
+🔴 ETAPA 3: Empresas em Crise (Baixa)
+- Aplicar o mesmo processo da Etapa 1, voltado para setores em crise ou retração.
+- Termos de busca ajustados para setores em baixa.
+- Filtragem dos 10 links e validação das fontes.
+- Extração e limpeza dos setores.
+- Gerar fluxo de caixa realista para cada setor (mínimo 2 anos, com cenários de retração e baixa demanda).
+- Salvar os arquivos separados para os setores em crise.
+
+─────────────────────────────────────────────────────
+
+✅ Importante:
+- Cada etapa é independente e só será iniciada após a finalização completa da anterior.
+- Todo o processo deve ser documentado e salvo em arquivos organizados (dados/ e modelos/).
+- A metodologia de coleta, tratamento e simulação será a mesma em todas as etapas.
+
+
+
+===== Documento 2: Planejamento_Parte1_Robusto =====
+
+
+📌 PLANEJAMENTO ROBUSTO - PARTE 1 DO PROJETO FluxoSmartAI
+
+🎯 Objetivo Geral:
+Identificar e mapear setores de atuação de empresas em três situações de mercado (Alta, Estáveis, Baixa), seguindo o mesmo processo em cada etapa, com fluxo de caixa realista para cada setor e cenário, fundamentado em pesquisa e análise automatizada de informações.
+
+─────────────────────────────────────────────────────
+
+🚀 ESTRUTURA DA PARTE 1 - DIVISÃO EM 3 ETAPAS INDEPENDENTES:
+
+1️⃣ ETAPA 1: Empresas em Alta
+2️⃣ ETAPA 2: Empresas Estáveis (Média)
+3️⃣ ETAPA 3: Empresas em Crise (Baixa)
+
+Cada etapa será executada integralmente, do início (busca) até a criação dos dados financeiros, antes de iniciar a próxima.
+
+─────────────────────────────────────────────────────
+
+🔍 METODOLOGIA DE BUSCA E COLETA DE DADOS:
+
+- A pesquisa será feita com frases direcionadas, específicas para cada categoria (frases a definir).
+- Serão coletados os 10 primeiros links de cada busca usando a SerpAPI (Google Search).
+- Será feita a filtragem dos links para manter apenas os provenientes de fontes confiáveis previamente definidas.
+
+📌 Fontes confiáveis:
+- SEBRAE
+- IBGE
+- Valor Econômico
+- Exame
+- Deloitte
+- PwC
+- Banco Central
+- Outras fontes validadas.
+
+─────────────────────────────────────────────────────
+
+🟢 EXTRAÇÃO E ANÁLISE DOS SETORES:
+
+- Para cada link aceito, será feita a análise do conteúdo usando processamento de linguagem natural (NLP).
+- A extração será realizada analisando as seguintes tags, com prioridade definida:
+  1. <h1>
+  2. <h2>
+  3. <h3>
+  4. <strong>, <b>
+  5. <p>
+  6. <li>
+- Para cada tipo de tag, haverá uma função de extração separada, garantindo que cada etapa seja independente e organizada.
+- O NLP realizará:
+  - Normalização de texto (remover acentos, caixa alta/baixa).
+  - Remoção de stopwords.
+  - Avaliação de similaridade para evitar repetição de setores (mas sem impedir que um mesmo setor exista em diferentes categorias).
+
+─────────────────────────────────────────────────────
+
+📂 ORGANIZAÇÃO DAS INFORMAÇÕES:
+
+- Setores extraídos serão salvos em arquivos separados por categoria (Alta, Média, Baixa).
+- Setores repetidos entre categorias são permitidos.
+- O fluxo de caixa será específico para cada setor em cada categoria (ex.: o fluxo de "Delivery" em Alta pode ser diferente do fluxo de "Delivery" em Baixa).
+
+─────────────────────────────────────────────────────
+
+💰 GERAÇÃO DO FLUXO DE CAIXA PARA CADA SETOR:
+
+- Para cada setor identificado, será gerado um arquivo .csv contendo o fluxo de caixa.
+- O fluxo de caixa terá no mínimo 2 anos de dados simulados.
+- A geração será fundamentada em:
+  - Pesquisas específicas sobre o fluxo financeiro daquele setor no cenário correspondente (Alta, Média, Baixa).
+  - Utilização de referências reais de médias de mercado, relatórios públicos e informações coletadas das fontes confiáveis.
+- Considerar sazonalidade e eventos especiais sempre que aplicável.
+
+─────────────────────────────────────────────────────
+
+🟡 RESUMO DAS AÇÕES EM CADA ETAPA:
+
+1. Rodar a busca.
+2. Filtrar os links pelas fontes confiáveis.
+3. Acessar os sites e extrair os setores usando NLP e análise das tags.
+4. Eliminar repetições (no mesmo cenário), padronizar nomes dos setores.
+5. Criar o fluxo de caixa específico para cada setor encontrado.
+6. Salvar os arquivos de setores e fluxos de caixa organizados.
+
+─────────────────────────────────────────────────────
+
+✅ Observações Finais:
+- Cada etapa é independente e será concluída totalmente antes de passar para a próxima.
+- O projeto será documentado com todos os passos descritos e as fontes das informações utilizadas.

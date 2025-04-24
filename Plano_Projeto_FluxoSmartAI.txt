@@ -1,0 +1,75 @@
+
+📌 PLANO GERAL DO PROJETO FluxoSmartAI
+
+🎯 Objetivo:
+Construir uma base de dados realista para previsão de fluxo de caixa, considerando setores em alta, estáveis e em baixa, usando dados econômicos e de mercado.
+
+─────────────────────────────────────────────────────
+
+🔹 PARTE 1: COLETA DE DADOS (Entrada de Informação)
+
+1️⃣ Identificar Empresas e Setores (Alta, Média, Baixa)
+- Ferramenta: SerpAPI
+- Buscar termos como:
+  - "empresas em alta no Brasil 2024"
+  - "setores mais lucrativos"
+  - "negócios promissores para investir"
+  - (E também buscar empresas em baixa e medianas)
+- Salvar os resultados separando as 3 categorias.
+
+2️⃣ Coletar Dados Econômicos (Banco Central do Brasil)
+- Taxa Selic, CDI, Inflação (IPCA, IGP-M), Dólar/câmbio.
+- Modelar impacto no fluxo de caixa das empresas.
+
+3️⃣ Coletar Dados de Consumo e Tendências (IBGE)
+- Índice de vendas, evolução do mercado, nível de renda da população.
+- Avaliar comportamento do setor no tempo.
+
+4️⃣ Identificar Tendências e Sazonalidade (Google Trends)
+- Scraping de termos sobre sazonalidade e picos de demanda por setor.
+- Avaliar meses de pico e baixa.
+
+─────────────────────────────────────────────────────
+
+🔸 PARTE 2: TRATAMENTO E PREPARAÇÃO DE DADOS (Antes do Treino da IA)
+
+5️⃣ Padronização e Organização dos Dados
+- Normalizar textos, datas, formatos numéricos.
+- Unificar os dados das diferentes fontes.
+- Inserir rótulo (label) em cada linha: alta, média ou baixa.
+
+6️⃣ Simulação de Fluxo de Caixa
+- Categorias: entradas (vendas, investimentos), saídas (custos, fornecedores, marketing).
+- Gerar cenários:
+  - Normal (dados reais)
+  - Crise (queda de demanda ou aumento de custos)
+  - Crescimento (setor aquecido)
+
+7️⃣ Balanceamento de Dados para Treinamento
+- Verificar quantidade de exemplos em cada categoria (alta, média, baixa).
+- Ajustar para não ter desequilíbrio entre as classes.
+
+─────────────────────────────────────────────────────
+
+🔸 PARTE 3: TREINAMENTO E VALIDAÇÃO DA IA
+
+8️⃣ Treinamento da IA / Machine Learning
+- Utilizar dados tratados e balanceados.
+- Definir separação de dados (treino, validação e teste).
+- Treinar modelos para prever receita futura e classificar o status do setor.
+
+9️⃣ Validação e Teste do Modelo
+- Métricas: acurácia, F1-score, recall, etc.
+- Avaliar se o modelo está generalizando bem ou decorando os dados.
+
+10️⃣ Atualização Contínua (opcional)
+- Atualizar a base conforme novas coletas.
+- Re-treinar a IA periodicamente para refletir o mercado atual.
+
+─────────────────────────────────────────────────────
+
+✅ Checklist Final:
+- [ ] Separação clara entre coleta, tratamento e treino.
+- [ ] Cada etapa salva em arquivos próprios (CSV, JSON).
+- [ ] Scripts modularizados por etapa.
+- [ ] Documentação de cada parte do processo.
